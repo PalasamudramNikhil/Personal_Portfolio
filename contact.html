@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact • Nikhil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="theme-light gradient-bg">
+  <header class="site-header">
+    <a href="index.html" class="logo" aria-label="Nikhil Logo">₦₭</a>
+    <nav class="main-nav">
+      <a href="index.html" class="">Home</a>
+      <a href="about.html" class="">About</a>
+      <a href="skills.html" class="">Skills</a>
+      <a href="education.html" class="">Education</a>
+      <a href="certifications.html" class="">Certifications</a>
+      <a href="achievements.html" class="">Achievements</a>
+      <a href="projects.html" class="">Projects</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <button id="themeSwitch" class="switch" aria-label="Toggle theme"><span class="knob"></span></button>
+  </header>
+
+  <main>
+    <section class="page-head reveal-up">
+      <h2>Contact</h2>
+      <p>Let’s connect and collaborate.</p>
+    </section>
+
+    <!-- Contact Cards -->
+    <section class="contact-grid">
+      <a class="contact-card glass reveal-up" href="mailto:palasamudramnikhil@gmail.com" target="_blank">
+        <i class="fa-solid fa-envelope"></i> palasamudramnikhil@gmail.com
+      </a>
+      <a class="contact-card glass reveal-up" href="https://www.linkedin.com/in/palasamudram-nikhil-914a5428b/" target="_blank">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+      <a class="contact-card glass reveal-up" href="https://github.com/PalasamudramNikhil" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="glass reveal-up" style="max-width:600px; margin:40px auto; padding:20px; border-radius:12px;">
+      <h3>Send me a message</h3>
+      <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required style="width:100%; padding:10px; margin-bottom:10px;">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required style="width:100%; padding:10px; margin-bottom:10px;">
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Your message" rows="5" required style="width:100%; padding:10px; margin-bottom:10px;"></textarea>
+
+        <button type="submit" style="padding:10px 20px; background-color:#ff8754; color:white; border:none; border-radius:8px; cursor:pointer;">
+          <i class="fa-solid fa-paper-plane"></i> Send
+        </button>
+      </form>
+      <p id="formResponse" style="margin-top:10px; color:green;"></p>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      document.getElementById("formResponse").textContent = `Thank you, ${name}! Your message has been sent successfully.`;
+      this.reset();
+    });
+  </script>
+</body>
+</html>
